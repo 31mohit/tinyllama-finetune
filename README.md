@@ -13,7 +13,26 @@ Quantized to GGUF format and served locally using Ollama and llama-cpp-python.
 ## Tech Stack
 Python, HuggingFace Transformers, PEFT, TRL, BitsAndBytes, llama.cpp, Ollama
 
+## Download Model
+Download the GGUF model from Hugging Face:
+https://huggingface.co/31mohit/tinyllama-finetune
+
 ## How to run
-1. Install Ollama from https://ollama.com
-2. Run: ollama create my-tinyllama -f Modelfile
-3. Run: ollama run my-tinyllama
+1. Download the GGUF model from Hugging Face link above
+2. Install Ollama from https://ollama.com
+3. Create a Modelfile with: FROM ./tinyllama-finetuned.gguf
+4. Run: ollama create my-tinyllama -f Modelfile
+5. Run: ollama run my-tinyllama
+
+## Results
+- Successfully fine-tuned TinyLlama-1.1B on 1,000 instruction-response pairs
+- Quantized model size: 2.2GB (GGUF f16 format)
+- Base model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+- Dataset: yahma/alpaca-cleaned
+```
+
+Press **Ctrl + S**, then run in terminal:
+```
+git add README.md
+git commit -m "Update README with model and run instructions"
+git push
